@@ -18,11 +18,22 @@
 
         }
 
-        function OnEndCallback(s, e) {
-            if (s.GetGridView().cp_selected) {
-                s.GetInputElement().value = "(Select All)";
-                delete (s.GetGridView().cp_selected);
+         function OnEndCallback(s, e) {
+            UpdateSelectAll(s);
+        }
+
+        function OnInit(s, e) {
+            UpdateSelectAll(s);
+        }
+		
+        function UpdateSelectAll(lookup) {
+            if (lookup.GetGridView().cp_selected) {
+                lookup.GetInputElement().value = "(Select All)";
+                delete (lookup.GetGridView().cp_selected);
+                cb.SetChecked(true);
             }
+            else 
+                cb.SetChecked(false);
         }
     </script>
     <title></title>
@@ -31,9 +42,9 @@
     <form id="form1" runat="server">
 
         <dx:ASPxGridLookup ID="gridLookup" runat="server" ClientInstanceName="lookup" KeyFieldName="CategoryID" DataSourceID="ads"
-            SelectionMode="Multiple" Width="300px" OnValueChanged="gridLookup_ValueChanged" TextFormatString="{0}">
+            SelectionMode="Multiple" Width="300px"  OnCustomJSProperties="gridLookup_CustomJSProperties" OnValueChanged="gridLookup_ValueChanged" TextFormatString="{0}">
 
-            <ClientSideEvents EndCallback="OnEndCallback" />
+            <ClientSideEvents EndCallback="OnEndCallback" Init="OnInit" />
             <Columns>
                 <dx:GridViewCommandColumn ShowSelectCheckbox="True" Width="20px">
                     <HeaderTemplate>
