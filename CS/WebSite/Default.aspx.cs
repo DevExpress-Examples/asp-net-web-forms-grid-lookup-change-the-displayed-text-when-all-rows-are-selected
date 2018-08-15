@@ -12,15 +12,9 @@ public partial class _Default : System.Web.UI.Page
     
     }
 
-      protected void gridLookup_ValueChanged(object sender, EventArgs e) {
-        SpecifyJSProperties(sender as ASPxGridLookup);
-    }
-
-    protected void gridLookup_CustomJSProperties(object sender, CustomJSPropertiesEventArgs e) {
-        SpecifyJSProperties(sender as ASPxGridLookup);
-    }
-
-    protected void SpecifyJSProperties(ASPxGridLookup gl) {
+    protected void gridLookup_ValueChanged(object sender, EventArgs e)
+    {
+        ASPxGridLookup gl = sender as ASPxGridLookup;
         if (gl.GridView.Selection.Count == gl.GridView.VisibleRowCount)
             gl.GridView.JSProperties["cp_selected"] = true;
     }
