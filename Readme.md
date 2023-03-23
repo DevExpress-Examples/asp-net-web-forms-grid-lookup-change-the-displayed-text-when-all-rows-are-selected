@@ -15,7 +15,7 @@ This example illustrates how to display a custom text inside [ASPxGridLookup](ht
 
 To implement this scenario, follow the steps below:
 
-1. Handle the [ASPxGridLookup.ValueChanged](http://documentation.devexpress.com/#AspNet/DevExpressWebASPxEditorsASPxEdit_ValueChangedtopic) event to pass a flag to the client side. The flag indicates whether all rows are selected.
+1. Handle the [ASPxGridLookup.ValueChanged](http://documentation.devexpress.com/#AspNet/DevExpressWebASPxEditorsASPxEdit_ValueChangedtopic) event to pass a flag to the client. The flag indicates whether all rows are selected.
 
     ```js
     protected void gridLookup_ValueChanged(object sender, EventArgs e)
@@ -27,7 +27,7 @@ To implement this scenario, follow the steps below:
 
     ```
 
-2. On the client, handle the [ASPxClientGridLookup.EndCallback](https://docs.devexpress.com/AspNet/js-ASPxClientGridLookup.EndCallback) event and specify a custom text if the flag returns true value.
+2. On the client, handle the [ASPxClientGridLookup.EndCallback](https://docs.devexpress.com/AspNet/js-ASPxClientGridLookup.EndCallback) event and specify a custom text if the flag returns true.
 
 
     ```js
