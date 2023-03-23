@@ -6,7 +6,7 @@
 
 # GridLookup for ASP.NET Web Forms - How to display a custom text when all rows are selected
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4862/)**
+**[[Run Online]](https://codecentral.devexpress.com/128530864/)**
 <!-- run online end -->
 
 This example illustrates how to display a custom text inside [ASPxGridLookup](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridLookup) when all its rows are selected.
